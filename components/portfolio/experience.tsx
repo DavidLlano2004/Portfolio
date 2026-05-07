@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion";
 
 export default function Experience() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.05 });
 
   const experiences = [
     {
@@ -17,15 +17,15 @@ export default function Experience() {
       description: "Proyecto 1: Sistema de Gestión de Fútbol Colombiano",
       second_description: "Proyecto 2: Sistema de Gestión de Parqueadero",
       achievements: [
-        "Desarrollé un sistema Backoffice completo utilizando React.js, Node.js y PostgreSQL para la administración de equipos de fútbol colombianos",
+        "Desarrolló un sistema Backoffice completo utilizando React.js, Node.js y PostgreSQL para la administración de equipos de fútbol colombianos",
         "Implementación de CI/CD reduciendo tiempo de deploy en 60%",
         "Mentoría a equipo de 5 desarrolladores junior",
         "Migración exitosa de aplicación legacy a Next.js 14",
       ],
       second_achievements: [
-        "Lideré el desarrollo Full Stack de sistema de gestión de parqueadero utilizando React.js, Node.js, PostgreSQL y React Native.",
-        "Implementé Backoffice administrativo con control de entrada/salida de vehículos, registro de tiempos y generación de reportes automatizados.",
-        "Desarrollé aplicación móvil multiplataforma con dos interfaces diferenciadas",
+        "Lideró el desarrollo Full Stack de sistema de gestión de parqueadero utilizando React.js, Node.js, PostgreSQL y React Native.",
+        "Implementó Backoffice administrativo con control de entrada/salida de vehículos, registro de tiempos y generación de reportes automatizados.",
+        "Desarrolló aplicación móvil multiplataforma con dos interfaces diferenciadas",
         "Para usuarios: consulta de disponibilidad, reservas y pagos.",
         "Para vigilantes: registro de vehículos, validación de tickets y gestión de ocupación en tiempo real.",
       ],
@@ -41,11 +41,11 @@ export default function Experience() {
       company: "Valiu",
       position: "Frontend Developer",
       period: "Noviembre 2024 - Julio 2025",
-      description: "Desarrollé el producto MVP desde cero de MatchRed",
+      description: "Desarrolló el producto MVP desde cero de MatchRed",
       achievements: [
-        " Lideré el desarrollo completo del Frontend del Backoffice administrativo de MatchRed, plataforma para la gestiónde ligas de fútbol amateur, utilizando consultas con GraphQL y arquitectura de base datos con AWS",
-        "Implementé desde cero el sitio web oficial de MatchRed, optimizando velocidad de carga y experiencia de usuario.",
-        " Desarrollé e implementé dos aplicaciones móviles en React Native:",
+        "Lideró el desarrollo completo del Frontend del Backoffice administrativo de MatchRed, plataforma para la gestión de ligas de fútbol amateur, utilizando consultas con GraphQL y arquitectura de base datos con AWS",
+        "Implementó desde cero el sitio web oficial de MatchRed, optimizando velocidad de carga y experiencia de usuario.",
+        "Desarrolló e implementó dos aplicaciones móviles en React Native:",
         "Para jugadores: gestión de partidos, equipos y estadísticas.",
         "Para árbitros: asignación de partidos, reportes y seguimiento en tiempo real.",
       ],
@@ -62,11 +62,11 @@ export default function Experience() {
       position: "Frontend Developer",
       period: "Agosto 2023 - Septiembre 2024",
       description:
-        "Desarrollé 3 productos MVP desde cero , mejorando experiencia de usuario y rendimiento",
+        "Desarrolló 3 productos MVP desde cero, mejorando experiencia de usuario y rendimiento",
       achievements: [
-        "Lideré la ejecución completa Frontend de la aplicación web Clean Energy, logrando una mejora del 80% en la experiencia de usuario y optimizando significativamente el flujo de la aplicación.",
-        "Encabecé la creación y expansión total Frontend de la plataforma web Carbonlitycs Nature, lo que resultó en una duplicación de la eficiencia del usuario y una notable optimización del rendimiento del sistema",
-        "Desarrollé la evolución completa de la aplicación Frontend de la web Carbonlitycs Agro, mejorando la usabilidad en gran medida y refinando de manera sustancial la navegación y funcionalidad de la aplicación.",
+        "Lideró la ejecución completa Frontend de la aplicación web Clean Energy, logrando una mejora del 80% en la experiencia de usuario y optimizando significativamente el flujo de la aplicación.",
+        "Encabezó la creación y expansión total Frontend de la plataforma web Carbonlitycs Nature, lo que resultó en una duplicación de la eficiencia del usuario y una notable optimización del rendimiento del sistema",
+        "Desarrolló la evolución completa de la aplicación Frontend de la web Carbonlitycs Agro, mejorando la usabilidad en gran medida y refinando de manera sustancial la navegación y funcionalidad de la aplicación.",
       ],
       technologies: ["React","Tailwind", "JavaScript" , "Jest Testing"],
     },
@@ -75,11 +75,11 @@ export default function Experience() {
       position: "Prácticante de desarrollo",
       period: "Enero 2023 - Julio 2023",
       description:
-        "Desarrollé apliacación interna para la gestión de equipos portatiles",
+        "Desarrolló aplicación interna para la gestión de equipos portátiles",
       achievements: [
-        "Participé en procesos de automatización y mejora operativa, identificando oportunidades mediante herramientas de RPA",
-        "Implementé tableros dinámicos con Power BI, mejorando la toma de decisiones en diferentes áreas.",
-        "Desarrollé una aplicación en Power Apps + Power Automate para la entrega de equipos portátiles, mejorando el proceso en un 90% en términos de trazabilidad y eficiencia.",
+        "Participó en procesos de automatización y mejora operativa, identificando oportunidades mediante herramientas de RPA",
+        "Implementó tableros dinámicos con Power BI, mejorando la toma de decisiones en diferentes áreas.",
+        "Desarrolló una aplicación en Power Apps + Power Automate para la entrega de equipos portátiles, mejorando el proceso en un 90% en términos de trazabilidad y eficiencia.",
       ],
       technologies: ["Power Apps", "Power Automate", "Power BI" , "Excel" , "HTML" , "CSS" , "JavaScript"],
     },

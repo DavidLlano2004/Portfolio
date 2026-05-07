@@ -90,7 +90,7 @@ export default function Hero() {
             className="text-base md:text-lg lg:text-xl text-[#134074] max-w-2xl mx-auto leading-relaxed"
           >
             Construyo experiencias web excepcionales con código limpio, diseño intuitivo y tecnologías modernas.
-            Especializado en crear soluciones escalables y eficientes.
+            Creo soluciones escalables y eficientes.
           </motion.p>
 
           {/* CTA Buttons */}
