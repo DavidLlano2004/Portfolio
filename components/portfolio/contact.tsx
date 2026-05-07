@@ -1,18 +1,44 @@
 "use client"
 
-import { useRef } from "react"
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Instagram } from "lucide-react"
+import { useRef, useState } from "react"
+import { Mail, MapPin, Phone, Send, Github, Linkedin, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { motion, useInView } from "framer-motion"
 
+type FormStatus = "idle" | "loading" | "success" | "error"
+
 export default function Contact() {
   const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, amount: 0.05 })
+  const [status, setStatus] = useState<FormStatus>("idle")
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
 
-  // Mejora: El formulario ahora es funcional con formsubmit.co (sin necesidad de backend)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus("loading")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      if (res.ok) {
+        setStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
+    }
+  }
 
   const contactInfo = [
     {
@@ -47,14 +73,14 @@ export default function Contact() {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/julianllano1809/",
       color: "hover:text-[#0b2545]",
-    }
+    },
   ]
 
   return (
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-20 md:py-32 px-4 bg-gradient-to-b from-[#8da9c4]/5 to-background"
+      className="relative py-20 md:py-32 px-4 bg-linear-to-b from-[#8da9c4]/5 to-background"
     >
       <div className="container mx-auto max-w-6xl">
         {/* Section Title */}
@@ -90,84 +116,145 @@ export default function Contact() {
           >
             <Card className="p-8 border-2 border-[#8da9c4]/20 bg-background/80 backdrop-blur-sm shadow-xl">
               <h3 className="text-2xl font-bold text-[#0b2545] mb-6">Envíame un mensaje</h3>
-              {/* Mejora: Formulario funcional con formsubmit.co */}
-              <form action="https://formsubmit.co/tu@email.com" method="POST" className="space-y-6">
-                {/* Inputs hidden para configurar formsubmit.co */}
-                <input type="hidden" name="_next" value="https://tudominio.com" />
-                <input type="hidden" name="_subject" value="Nuevo mensaje desde portfolio" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.5 }}
-                >
-                  <label htmlFor="name" className="block text-sm font-medium text-[#0b2545] mb-2">
-                    Nombre
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Tu nombre"
-                    required
-                    className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c]"
-                  />
-                </motion.div>
 
+              {status === "success" ? (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.6 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center gap-4 py-12 text-center"
                 >
-                  <label htmlFor="email" className="block text-sm font-medium text-[#0b2545] mb-2">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="tu@email.com"
-                    required
-                    className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c]"
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.7 }}
-                >
-                  <label htmlFor="message" className="block text-sm font-medium text-[#0b2545] mb-2">
-                    Mensaje
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Cuéntame sobre tu proyecto..."
-                    rows={6}
-                    required
-                    className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c] resize-none"
-                  />
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.8 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
+                  <CheckCircle className="text-green-500" size={56} />
+                  <p className="text-xl font-bold text-[#0b2545]">¡Mensaje enviado!</p>
+                  <p className="text-[#134074]">Te responderé lo antes posible.</p>
                   <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-[#13315c] text-[#eef4ed] hover:bg-[#134074] transition-all duration-300"
+                    variant="outline"
+                    className="mt-2 border-[#8da9c4]/40 text-[#134074]"
+                    onClick={() => setStatus("idle")}
                   >
-                    <Send size={18} className="mr-2" />
-                    Enviar Mensaje
+                    Enviar otro mensaje
                   </Button>
                 </motion.div>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <label htmlFor="name" className="block text-sm font-medium text-[#0b2545] mb-2">
+                      Nombre
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      placeholder="Tu nombre"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c]"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.6 }}
+                  >
+                    <label htmlFor="email" className="block text-sm font-medium text-[#0b2545] mb-2">
+                      Email
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="tu@email.com"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c]"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.65 }}
+                  >
+                    <label htmlFor="subject" className="block text-sm font-medium text-[#0b2545] mb-2">
+                      Asunto
+                    </label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      placeholder="¿Sobre qué quieres hablar?"
+                      required
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c]"
+                    />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.7 }}
+                  >
+                    <label htmlFor="message" className="block text-sm font-medium text-[#0b2545] mb-2">
+                      Mensaje
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Cuéntame sobre tu proyecto..."
+                      rows={5}
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="border-[#8da9c4]/30 focus:border-[#13315c] focus:ring-[#13315c] resize-none"
+                    />
+                  </motion.div>
+
+                  {status === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="flex items-center gap-2 text-red-500 text-sm"
+                    >
+                      <AlertCircle size={16} />
+                      <span>Hubo un error al enviar. Intenta de nuevo.</span>
+                    </motion.div>
+                  )}
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.8 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={status === "loading"}
+                      className="w-full bg-[#13315c] text-[#eef4ed] hover:bg-[#134074] transition-all duration-300 disabled:opacity-70"
+                    >
+                      {status === "loading" ? (
+                        <>
+                          <Loader2 size={18} className="mr-2 animate-spin" />
+                          Enviando...
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} className="mr-2" />
+                          Enviar Mensaje
+                        </>
+                      )}
+                    </Button>
+                  </motion.div>
+                </form>
+              )}
             </Card>
           </motion.div>
 
