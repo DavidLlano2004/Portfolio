@@ -10,7 +10,7 @@ import { motion, useInView } from "framer-motion";
 export default function Projects() {
   const [selectedFilter, setSelectedFilter] = useState("All");
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.05 });
 
   const projects = [
     {
