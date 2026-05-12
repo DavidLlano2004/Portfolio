@@ -11,6 +11,7 @@ export default function CustomCursor() {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
+    
     const handleMouseOver = (e: Event) => {
       const target = e.target as HTMLElement
       if (
