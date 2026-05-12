@@ -22,22 +22,23 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setStatus("loading")
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      })
-      if (res.ok) {
-        setStatus("success")
-        setFormData({ name: "", email: "", subject: "", message: "" })
-      } else {
-        setStatus("error")
-      }
-    } catch {
-      setStatus("error")
-    }
+    setStatus("success")
+    // setStatus("loading")
+    // try {
+    //   const res = await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(formData),
+    //   })
+    //   if (res.ok) {
+    //     setStatus("success")
+    //     setFormData({ name: "", email: "", subject: "", message: "" })
+    //   } else {
+    //     setStatus("error")
+    //   }
+    // } catch {
+    //   setStatus("error")
+    // }
   }
 
   const contactInfo = [
