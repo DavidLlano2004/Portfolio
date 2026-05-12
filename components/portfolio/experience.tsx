@@ -11,9 +11,28 @@ export default function Experience() {
 
   const experiences = [
     {
-      company: "Freelancer",
+      company: "Grownet",
+      position: "Desarrollador Frontend",
+      period: "Febrero 2026 - Presente",
+      description: "Plataforma B2B para gestión de proveedores en la industria alimentaria",
+      achievements: [
+        "Desarrollo de portal de proveedores en producción con Next.js y TypeScript estricto, cubriendo módulos de logística, finanzas, CRM e inventario.",
+        "Migración progresiva de codebase JavaScript a TypeScript con arquitectura escalable por features.",
+        "Integración con APIs REST con manejo de autenticación y estados globales con Zustand.",
+        "Desarrollo de aplicación móvil con React Native/Expo para el flujo de compras.",
+      ],
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "React native",
+        "Zustand",
+        "WebSockets",
+      ],
+    },
+    {
+      company: "Freelancer , Propios",
       position: "Full Stack Developer",
-      period: "Agosto 2025 - Presente",
+      period: "Agosto 2025 - Febrero 2026",
       description: "Proyecto 1: Sistema de Gestión de Fútbol Colombiano",
       second_description: "Proyecto 2: Sistema de Gestión de Parqueadero",
       achievements: [
@@ -58,7 +77,7 @@ export default function Experience() {
       ],
     },
     {
-      company: "Inteia",
+      company: "Inteia (Sistemas Inteligentes en Red)",
       position: "Frontend Developer",
       period: "Agosto 2023 - Septiembre 2024",
       description:
@@ -71,7 +90,7 @@ export default function Experience() {
       technologies: ["React","Tailwind", "JavaScript" , "Jest Testing"],
     },
     {
-      company: "Inteia",
+      company: "Inteia (Sistemas Inteligentes en Red)",
       position: "Prácticante de desarrollo",
       period: "Enero 2023 - Julio 2023",
       description:
