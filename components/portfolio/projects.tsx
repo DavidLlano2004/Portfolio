@@ -14,6 +14,27 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "GrownetSuppliers - Plataforma de Gestión de Proveedores",
+      description:
+        "Plataforma B2B integral para gestión de proveedores con arquitectura modular por dominios de negocio: CRM, finanzas, inventario, logística, compras, ventas y reportes. Incluye inbox omnicanal en tiempo real (WhatsApp/email/llamadas vía Twilio), creación de órdenes de compra asistida por IA y dashboards operativos. Con acompañamiento en las apps móviles (React Native) utilizadas por transportistas y proveedores en el flujo logístico. ",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Mantine",
+        "Tailwind",
+        "Zustand",
+        "WebSockets",
+        "React Native"
+      ],
+      image: "",
+      category: "Full Stack",
+      demoUrl: "",
+      githubUrl: "",
+      featured: true,
+    },
+
+    {
       title: "MatchRed - Plataforma de Fútbol Amateur",
       description:
         "Sistema integral con backoffice, apps móviles para jugadores y árbitros, simulación de partidos en tiempo real y panel web de estadísticas.",

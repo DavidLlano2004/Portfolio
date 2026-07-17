@@ -141,8 +141,8 @@ export default function About() {
               className="grid grid-cols-3 gap-4 pt-6"
             >
               {[
-                { value: "3+", label: "Años" },
-                { value: "8", label: "Proyectos" },
+                { value: "+3", label: "Años" },
+                { value: "+30", label: "Proyectos" },
               ].map((stat, index) => (
                 <motion.div key={stat.label} variants={itemVariants} className="text-center">
                   <motion.div

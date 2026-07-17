@@ -11,10 +11,11 @@ export default function Experience() {
 
   const experiences = [
     {
-      company: "Grownet",
+      company: "GrownetSuppliers",
       position: "Desarrollador Frontend",
-      period: "Febrero 2026 - Presente",
-      description: "Plataforma B2B para gestión de proveedores en la industria alimentaria",
+      period: "Febrero 2026 - Julio 2026 (5 meses)",
+      description:
+        "Plataforma B2B para gestión de proveedores en la industria alimentaria",
       achievements: [
         "Desarrollo de portal de proveedores en producción con Next.js y TypeScript estricto, cubriendo módulos de logística, finanzas, CRM e inventario.",
         "Migración progresiva de codebase JavaScript a TypeScript con arquitectura escalable por features.",
@@ -24,11 +25,12 @@ export default function Experience() {
       technologies: [
         "Next.js",
         "TypeScript",
-        "React native",
+        "React Native",
         "Zustand",
         "WebSockets",
       ],
     },
+
     {
       company: "Freelancer , Propios",
       position: "Full Stack Developer",
@@ -87,7 +89,7 @@ export default function Experience() {
         "Encabezó la creación y expansión total Frontend de la plataforma web Carbonlitycs Nature, lo que resultó en una duplicación de la eficiencia del usuario y una notable optimización del rendimiento del sistema",
         "Desarrolló la evolución completa de la aplicación Frontend de la web Carbonlitycs Agro, mejorando la usabilidad en gran medida y refinando de manera sustancial la navegación y funcionalidad de la aplicación.",
       ],
-      technologies: ["React","Tailwind", "JavaScript" , "Jest Testing"],
+      technologies: ["React", "Tailwind", "JavaScript", "Jest Testing"],
     },
     {
       company: "Inteia (Sistemas Inteligentes en Red)",
@@ -100,7 +102,15 @@ export default function Experience() {
         "Implementó tableros dinámicos con Power BI, mejorando la toma de decisiones en diferentes áreas.",
         "Desarrolló una aplicación en Power Apps + Power Automate para la entrega de equipos portátiles, mejorando el proceso en un 90% en términos de trazabilidad y eficiencia.",
       ],
-      technologies: ["Power Apps", "Power Automate", "Power BI" , "Excel" , "HTML" , "CSS" , "JavaScript"],
+      technologies: [
+        "Power Apps",
+        "Power Automate",
+        "Power BI",
+        "Excel",
+        "HTML",
+        "CSS",
+        "JavaScript",
+      ],
     },
   ];
 
