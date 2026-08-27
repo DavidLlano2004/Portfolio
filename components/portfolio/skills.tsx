@@ -69,6 +69,10 @@ export default function Skills() {
       color: "from-[#134074] to-[#8da9c4]",
       skills: [
         {
+          name: "Nest.js",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
+        },
+        {
           name: "Node.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
         },

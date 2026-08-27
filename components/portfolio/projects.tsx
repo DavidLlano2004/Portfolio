@@ -57,13 +57,12 @@ export default function Projects() {
       description:
         "Solución digital con IA para gestión de estacionamientos con reservas, pagos online, apps móviles para usuarios y vigilantes, y panel administrativo web.",
       tags: [
-        "React.js",
+        "Next.js",
         "React.native",
         "Typescript",
         "Postgres",
-        "Node js",
+        "Nest.js",
         "Tailwind",
-        "Express",
         "Docker",
       ],
       image: "",

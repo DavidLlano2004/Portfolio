@@ -119,14 +119,14 @@ export default function About() {
           >
             <p className="text-lg text-[#134074] leading-relaxed">
               Soy un desarrollador Frontend con experiencia en el desarrollo Full Stack apasionado con más de{" "}
-              <span className="font-semibold text-[#0b2545]">3 años de experiencia</span> construyendo aplicaciones web
+              <span className="font-semibold text-[#0b2545]">4 años de experiencia</span> construyendo aplicaciones web
               modernas y escalables.
             </p>
             <p className="text-lg text-[#134074] leading-relaxed">
               Mi enfoque se centra en crear{" "}
               <span className="font-semibold text-[#0b2545]">experiencias excepcionales</span> que combinan diseño
               elegante con código robusto. Me especializo en el ecosistema de JavaScript/TypeScript, trabajando con
-              React, Next.js, Node.js y bases de datos modernas.
+              React, Next.js, Nest.js y Node.js y bases de datos modernas PostgreSQL.
             </p>
             <p className="text-lg text-[#134074] leading-relaxed">
               Cuando no estoy programando, me encontrarás aprendiendo nuevas tecnologías, contribuyendo a proyectos open
@@ -141,8 +141,8 @@ export default function About() {
               className="grid grid-cols-3 gap-4 pt-6"
             >
               {[
-                { value: "+3", label: "Años" },
-                { value: "+30", label: "Proyectos" },
+                { value: "+4", label: "Años" },
+                { value: "+40", label: "Proyectos" },
               ].map((stat, index) => (
                 <motion.div key={stat.label} variants={itemVariants} className="text-center">
                   <motion.div
