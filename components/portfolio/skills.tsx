@@ -69,6 +69,14 @@ export default function Skills() {
       color: "from-[#134074] to-[#8da9c4]",
       skills: [
         {
+          name: "Spring Boot",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+        },
+        {
+          name: "Java",
+          logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+        },
+        {
           name: "Nest.js",
           logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
         },
@@ -129,9 +137,8 @@ export default function Skills() {
       <div className="container mx-auto max-w-6xl">
         {/* Section Title */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0b2545] mb-4">
             Habilidades & Tecnologías
@@ -147,12 +154,11 @@ export default function Skills() {
           {skillCategories.map((category, categoryIndex) => (
             <Card
               key={category.category}
-              className={`p-8 border-2 border-[#8da9c4]/20 hover:border-[#134074] transition-all duration-500 hover:shadow-2xl bg-background/80 backdrop-blur-sm ${
-                isVisible
+              className={`p-8 border-2 border-[#8da9c4]/20 hover:border-[#134074] transition-all duration-500 hover:shadow-2xl bg-background/80 backdrop-blur-sm ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
-             
+                }`}
+
             >
               {/* Category Header */}
               <div className="mb-8">
@@ -168,13 +174,11 @@ export default function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skill.name}
-                    className={`flex flex-col items-center justify-center p-4 rounded-xl bg-gradient-to-br from-[#eef4ed] to-[#8da9c4]/10 border border-[#8da9c4]/20 hover:border-[#134074] hover:shadow-lg hover:scale-110 transition-all duration-300 cursor-default ${
-                      isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
-                    }`}
+                    className={`flex flex-col items-center justify-center p-4 rounded-xl bg-gradient-to-br from-[#eef4ed] to-[#8da9c4]/10 border border-[#8da9c4]/20 hover:border-[#134074] hover:shadow-lg hover:scale-110 transition-all duration-300 cursor-default ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                      }`}
                     style={{
-                      transitionDelay: `${
-                        categoryIndex * 150 + skillIndex * 100
-                      }ms`,
+                      transitionDelay: `${categoryIndex * 150 + skillIndex * 100
+                        }ms`,
                     }}
                     onMouseEnter={() => setHoveredSkill(skill.name)}
                     onMouseLeave={() => setHoveredSkill(null)}
@@ -184,11 +188,10 @@ export default function Skills() {
                       <img
                         src={skill.logo || "/placeholder.svg"}
                         alt={`${skill.name} logo`}
-                        className={`w-full h-full object-contain transition-transform duration-300 ${
-                          hoveredSkill === skill.name
+                        className={`w-full h-full object-contain transition-transform duration-300 ${hoveredSkill === skill.name
                             ? "scale-125"
                             : "scale-100"
-                        }`}
+                          }`}
                       />
                     </div>
                     {/* Technology Name */}
@@ -204,9 +207,8 @@ export default function Skills() {
 
         {/* Additional Technologies Cloud */}
         <div
-          className={`mt-16 text-center transition-all duration-1000 delay-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`mt-16 text-center transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h3 className="text-2xl font-semibold text-[#0b2545] mb-8">
             También trabajo con
@@ -233,14 +235,13 @@ export default function Skills() {
                 name: "Postman",
                 logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
               },
-            
+
             ].map((tech, index) => (
               <div
                 key={tech.name}
-                className={`flex items-center gap-2 px-4 py-2 bg-[#8da9c4]/10 text-[#0b2545] rounded-full border border-[#8da9c4]/30 hover:bg-[#134074] hover:text-[#eef4ed] hover:scale-110 transition-all duration-300 cursor-default font-medium ${
-                  isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
-                }`}
-                
+                className={`flex items-center gap-2 px-4 py-2 bg-[#8da9c4]/10 text-[#0b2545] rounded-full border border-[#8da9c4]/30 hover:bg-[#134074] hover:text-[#eef4ed] hover:scale-110 transition-all duration-300 cursor-default font-medium ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                  }`}
+
               >
                 <img
                   src={tech.logo || "/placeholder.svg"}

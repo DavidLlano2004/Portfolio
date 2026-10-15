@@ -79,9 +79,10 @@ export default function Projects() {
         "React.js",
         "Typescript",
         "Postgres",
-        "Node.js",
+        "Java",
+        "Spring Boot",
+        "Spring Data",
         "Tailwind",
-        "Express",
         "Jest",
         "Docker",
       ],
@@ -212,11 +213,10 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 + index * 0.1 }}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                selectedFilter === filter
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedFilter === filter
                   ? "bg-[#13315c] text-[#eef4ed] shadow-lg scale-105"
                   : "bg-[#8da9c4]/10 text-[#134074] hover:bg-[#8da9c4]/20 border border-[#8da9c4]/30"
-              }`}
+                }`}
             >
               {filter}
             </motion.button>
@@ -238,7 +238,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
             >
               <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-                <Card className="group overflow-hidden border-2 border-[#8da9c4]/20 hover:border-[#134074] transition-all duration-500 hover:shadow-2xl bg-background h-125">
+                <Card className="group overflow-hidden border-2 border-[#8da9c4]/20 hover:border-[#134074] transition-all duration-500 hover:shadow-2xl bg-background h-[600px]">
                   {/* Project Image - Mejora: Optimizado con Next.js Image */}
                   <div className="relative overflow-hidden aspect-video hidden">
                     {/* <motion.div

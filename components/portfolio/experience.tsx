@@ -13,7 +13,7 @@ export default function Experience() {
     {
       company: "GrownetSuppliers",
       position: "Desarrollador Frontend",
-      period: "Febrero 2026 - Julio 2026 (5 meses)",
+      period: "Febrero 2026 - Septiembre 2026 (7 meses)",
       description:
         "Plataforma B2B para gestión de proveedores en la industria alimentaria",
       achievements: [
@@ -38,7 +38,7 @@ export default function Experience() {
       description: "Proyecto 1: Sistema de Gestión de Fútbol Colombiano",
       second_description: "Proyecto 2: Sistema de Gestión de Parqueadero",
       achievements: [
-        "Desarrolló un sistema Backoffice completo utilizando React.js, Node.js y PostgreSQL para la administración de equipos de fútbol colombianos",
+        "Desarrolló un sistema Backoffice completo utilizando React.js, Spring Boot y PostgreSQL para la administración de equipos de fútbol colombianos",
         "Implementación de CI/CD reduciendo tiempo de deploy en 60%",
         "Mentoría a equipo de 5 desarrolladores junior",
         "Migración exitosa de aplicación legacy a Next.js 14",

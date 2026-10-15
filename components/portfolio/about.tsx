@@ -126,7 +126,7 @@ export default function About() {
               Mi enfoque se centra en crear{" "}
               <span className="font-semibold text-[#0b2545]">experiencias excepcionales</span> que combinan diseño
               elegante con código robusto. Me especializo en el ecosistema de JavaScript/TypeScript, trabajando con
-              React, Next.js, Nest.js y Node.js y bases de datos modernas PostgreSQL.
+              React, Next.js, Nest.js y Node.js y bases de datos modernas PostgreSQL.Integración de APIS REST con Spring Boot y Spring Data.
             </p>
             <p className="text-lg text-[#134074] leading-relaxed">
               Cuando no estoy programando, me encontrarás aprendiendo nuevas tecnologías, contribuyendo a proyectos open
